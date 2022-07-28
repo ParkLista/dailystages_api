@@ -1,0 +1,20 @@
+{
+  "name": "dailystages_api",
+  "version": "1.0.0",
+  "description": "Creating, Updating and Tracking daily Taxi Stages in the terminals made easy with Daily ParkLista. This API simply implements the CRUD aspect of the Daily Stages API. Many changes are expected to take place as this is a learning project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParkLista/dailystages_api.git"
+  },
+  "keywords": [],
+  "author": "Davies Wabuluka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParkLista/dailystages_api/issues"
+  },
+  "homepage": "https://github.com/ParkLista/dailystages_api#readme"
+}
