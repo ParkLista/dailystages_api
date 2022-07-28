@@ -6,11 +6,12 @@ This API is built with NodeJs in mind, laveraging the power of NodeJs Runtime, E
 
 ## Taxi Properties
 To add a taxi into the queue, the following properties must be made available by the taxi owner.
--   destination
--   createdAt
--   bio
--   managedBy
--   createdFrom
+-   destination[array]geo
+-   createdAt[date]
+-   bio[text]
+-   managedBy[text]
+-   createdFrom[array]geo
+-   name
 
 ## Data Storage
 The API utilizes the magic of NoSQL database models to persist the data.

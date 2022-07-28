@@ -1,32 +1,62 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const StagesSchema = new Schema({
-    plate_number: {
-        type: String,
-        trim: true,
-        required: [ true, 'Plate Number must be added' ],
-        unique: true,
-    },
-    passengers: {
-        type: Number,
-        required: [ true, 'Number of Passenfers is required' ]
-    },
-    joinDate: {
-        type: Date,
-        default: Date.now
-    },
+const StageSchema = new Schema({
+    destination: {
+        // GeoJSON Point
+        type: {
+          type: String,
+          enum: ['Point']
+        },
+        coordinates: {
+          type: [Number],
+          index: '2dsphere'
+        },
+        formattedAddress: String,
+        street: String,
+        city: String,
+        state: String,
+        zipcode: String,
+        country: String
+      },
     bio: {
         type: String
     },
-    driver: {
+    managedBy: {
+        type: String
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    createdFrom: {
+        // GeoJSON Point
+        type: {
+            type: String,
+            enum: ['Point']
+            },
+            coordinates: {
+            type: [Number],
+            index: '2dsphere'
+        },
+        formattedAddress: String,
+        street: String,
+        city: String,
+        state: String,
+        zipcode: String,
+        country: String
+    },
+    name: {
         type: String,
-        required: [ true, 'This Taxi needs a driver to move' ]
+        required: [ true, 'Stage name must be provided' ],
+        unique: true,
     }
+
+    
 },{
     toJSON: { virtuals: true },
     // toObject: {virtuals: true }
 });
 
 
-module.exports = mongoose.model('Stage', StagesSchema);
+module.exports = mongoose.model('Stage', StageSchema);

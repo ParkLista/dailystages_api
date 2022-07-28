@@ -10,7 +10,7 @@ exports.addStage = asyncHandler(async(req, res, next)=>{
     const taxi = await Taxi.create(req.body);
     res.status(201).json({
         success: true,
-        message: 'A taxi has been added successfully',
+        message: 'A Stage has been added successfully',
         data: taxi
     });
 });
@@ -22,7 +22,7 @@ exports.getStages = asyncHandler(async(req, res, next)=>{
     const taxis = await Taxi.find();
     return res.status(200).json({
         success: true,
-        message: 'All Taxis available',
+        message: 'All Stages available',
         data: taxis
     })
 })
